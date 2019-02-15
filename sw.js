@@ -40,8 +40,8 @@ self.addEventListener('activate', function(e) {
 });
 
 //FETCH
-self.addEventListener('fetch', function(fetchEvent) {
-  console.log('Service Worker Fetching: ', fetchEvent.request.url);
+self.addEventListener('fetch', function(e) {
+  console.log('Service Worker Fetching: ', e.request.url);
 
   e.respondWith(
     caches.match(e.request).then(function(response) {
