@@ -2,7 +2,9 @@ var cacheName = 'waysecret-cache-1'; //version me on new releases
 
 var filesToCache = [
   '/',
- "./index.html"
+ "./index.html",
+ "./app.js",
+ "./sw.js"
 ];
 
 //INSTALL
