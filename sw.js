@@ -5,13 +5,7 @@ var filesToCache = [
   "./index.html",
   "./app.js",
   "./sw.js",
-  "./images",
-  "./images/icons",
-  "./images/icons/icon-128x128.png",
-  "./images/icons/icon-144x144.png",
-  "./images/icons/icon-152x152.png",
-  "./images/icons/icon-192x192.png",
-  "./images/icons/icon-256x256.png"
+  "./manifest.json"
 ];
 
 //INSTALL
