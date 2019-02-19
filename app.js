@@ -1,27 +1,44 @@
 (function() {
 'use strict';
 
-const player = document.getElementById('player');
+const video = document.querySelector('video');
+const button = document.getElementById('button');
 const canvas = document.getElementById('canvas');
-const context = canvas.getContext('2d');
-const captureButton = document.getElementById('capture');
+canvas.width = 480;
+canvas.height = 360;
+
+button.addEventListener('click', () => {
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+});
 
 const constraints = {
   video: true,
+  facingMode: 'environment'
 };
 
-captureButton.addEventListener('click', () => {
-  // Draw the video frame to the canvas.
-  context.drawImage(player, 0, 0, canvas.width, canvas.height);
-});
+function handleSuccess(stream) {
+  window.stream = stream; // make stream available to browser console
+  video.srcObject = stream;
+}
 
-// Attach the video stream to the video element and autoplay.
-navigator.mediaDevices.getUserMedia(constraints)
-  .then((stream) => {
-    player.srcObject = stream;
-  });
+function handleError(error) {
+  console.log('navigator.MediaDevices.getUserMedia error: ', error.message, error.name);
+}
 
-//register service worker
+navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
+
+
+
+
+
+
+/*
+-----------------------------------
+-- SERVICE WORKER -----------------
+-----------------------------------
+*/
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('./sw.js')
