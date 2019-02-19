@@ -14,7 +14,7 @@ button.addEventListener('click', () => {
 });
 
 const constraints = {
-  video: {facingMode: "environment"},
+  video: { facingMode: { exact: "environment" } },
   audio: false,
 
 };
