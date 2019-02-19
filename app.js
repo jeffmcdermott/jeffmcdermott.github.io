@@ -15,7 +15,8 @@ button.addEventListener('click', () => {
 
 const constraints = {
   video: true,
-  audio: false
+  audio: false,
+  facingMode: "environment",
 };
 
 function handleSuccess(stream) {
