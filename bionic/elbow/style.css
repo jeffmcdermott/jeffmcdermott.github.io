@@ -1,0 +1,33 @@
+body {
+  font-size: 24px;
+}
+
+div.container{
+  margin-bottom: 50px;
+  padding-left: 10px;
+}
+
+div#branding {
+  height: 128px;
+  width: 100%;
+}
+
+div#branding img{
+  display: inline-block;
+  height: 128px;
+  width: 128px;
+}
+
+div#branding div#brandingTitle{
+  display: inline-block;
+  height: 88px;
+  width: 512px;
+  padding-top: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+div#timers div.timer{
+  margin-bottom: 5px;
+}
