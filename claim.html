@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WaySecret Claim</title>
+  </head>
+  <body>
+    WaySecret Claim
+    <script type="text/javascript">
+      setTimeout(function(){
+        chrome.runtime.sendMessage({"message": "wbToken", "token": "aaabbbccc"});
+      }, 3000);
+    </script>
+  </body>
+</html>
