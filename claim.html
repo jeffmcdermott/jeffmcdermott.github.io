@@ -2,14 +2,12 @@
 <html lang="en">
   <head>
     <title>WaySecret Claim</title>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none';">
   </head>
   <body>
     WaySecret Claim
-    <script type="text/javascript">
-      setTimeout(function(){
-        chrome.runtime.sendMessage({"message": "wbSetToken", "token": "aaabbbccc"});
-      }, 3000);
+    <script type="text/javascript" src="https://waysecret.com/claim.js"></script>
+
     </script>
   </body>
 </html>
